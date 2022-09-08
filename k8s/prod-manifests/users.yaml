@@ -9,28 +9,43 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ui--env--
+  name: users--env--
   namespace: ns-posthub--env--
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ui--env--
+      app: users--env--
   template:
     metadata:
       labels:
-        app: ui--env--
+        app: users--env--
     spec:
       containers:
-      - name: ui--env--
+      - name: users--env--
         image: __ImageTag__
+        env:
+        - name: MONGO_URI
+          value: mongodb://users-mongo-service:27020/users
+        - name: JWT_KEY
+          valueFrom:
+            secretKeyRef:
+              name: jwtsecret
+              key: JWTKEY
         resources:
           requests:
               cpu: 250m
               memory: 350Mi
           limits:
             memory: "900Mi"
-            cpu: "1100m"
+            cpu: "700m"
+        readinessProbe:
+          httpGet:
+            path: /api/users/healthcheck
+            port: 3000
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 10
         ports:
         - containerPort: 3000
 
@@ -40,14 +55,14 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name:  ui-service--env--
+  name:  users-service--env--
   namespace: ns-posthub--env--
 spec:
   selector:
-    app:  ui--env--
+    app:  users--env--
   type:  ClusterIP
   ports:
-  - name:  ui--env--
+  - name:  users--env--
     port:  3000
     targetPort:  3000
     protocol:  TCP
