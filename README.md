@@ -1,7 +1,8 @@
 # Azure Kubernetes Service (AKS): Deploying Microservices
 This is the repository for the LinkedIn Learning course Azure Kubernetes Service (AKS): Deploying Microservices. The full course is available from [LinkedIn Learning][lil-course-url].
 
-_See the readme file in the main branch for updated instructions and information._
+As a devops engineer, developer, cloud admin, or system admin, you may need to deploy production AKS clusters and microservices via an orchestrator (AKS). This course has you covered. Instructor Prince Mokut introduces the basics of packaging microservices into images that can be deployed locally as a standalone docker container or in Azure Kubernetes, a cloud-managed orchestrator that helps you manage multiple container resources. Prince guides you through the process of securing access to your Azure Kubernetes Cluster, as well as the microservices in a production environment. He explains how to use CI/CD pipelines to automate deployment, as this helps you manage deployments of several applications. At the end of the course, you will know how to deploy a secure AKS integrated with Azure Application Gateway to securely expose your APIs, as well as how to fully automate deployment processes of container images for your development team.
+
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
 
@@ -20,15 +21,16 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
-## Installing
-1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
-2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
 
+### Instructor
 
-[0]: # (Replace these placeholder URLs with actual course URLs)
+Prince Mokut 
+                            
+DevOps Expert/Site Reliability Engineer
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
+                            
 
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/prince-mokut).
+
+[lil-course-url]: https://www.linkedin.com/learning/azure-kubernetes-service-aks-deploying-microservices?dApp=59033956
+[lil-thumbnail-url]: https://cdn.lynda.com/course/3212145/1666809303090?e=2147483647&v=beta&t=0nqhoXz1GKi8gQf-bpv7AkZlfrOtrgTyx3KfoFG4RDA-16x9.jpg
